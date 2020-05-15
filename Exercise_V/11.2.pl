@@ -1,12 +1,15 @@
 #!/usr/bin/perl
 
-$answer = int(1+rand(100));
+use strict;
+use warnings;
+
+my $answer = int(1+rand(100));
 
 #Instead guess with Binary search
 
-$start = 1;
-$end = 100;
-$current = int(($start + $end)/2);
+my $start = 1;
+my $end = 100;
+my $current = int(($start + $end)/2);
 print "target: ".$answer."\n";
 printf "start: %d\tend: %d\tcurrent: %d\n", $start,$end,$current;
 while($current != $answer){

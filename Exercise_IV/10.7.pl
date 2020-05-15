@@ -1,10 +1,12 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
 use File::Copy;
 
-$dir = "/home/linyd/Documents/Perl-Training/TEMP/BAK";
-opendir ($DIR, $dir) or die "Unable to open $dir\n", $!;
-@files = readdir($DIR);
+my $dir = "/home/linyd/Documents/Perl-Training/TEMP/BAK";
+opendir my $DIR, $dir or die "Unable to open $dir\n", $!;
+my @files = readdir($DIR);
 
 chdir "$dir";
 

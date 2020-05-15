@@ -1,11 +1,14 @@
 #!/usr/bin/perl
 
-$system_dir = '/bin';
+use strict;
+use warnings;
 
-opendir $dh, $system_dir or die "Cannot open $system_dir: $!";
-@files = readdir $dh;
-$files_modified_IN_24h;
-foreach $file (@files){
+my $system_dir = '/bin';
+
+opendir my $dh, $system_dir or die "Cannot open $system_dir: $!";
+my @files = readdir $dh;
+my $files_modified_IN_24h;
+foreach my $file (@files){
     if(-M $file >1 and not -d $file){
         print $file."\n";
     }

@@ -1,9 +1,12 @@
 #!/usr/bin/perl
 
-$x = 33;
-$y = 44;
-$a = -21;
-$b = -33;
+use strict;
+use warnings;
+
+my $x = 33;
+my $y = 44;
+my $a = -21;
+my $b = -33;
 
 sub pri_sub{
     my($a,$b) = @_;
@@ -11,7 +14,7 @@ sub pri_sub{
 }
 
 sub nom_sub{
-    ($a,$b) = @_;
+    my ($a,$b) = @_;
     return $a-$b;
 }
 

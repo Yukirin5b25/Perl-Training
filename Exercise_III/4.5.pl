@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
+
 sub absolute{
     my(@result);
     foreach(@_){
@@ -8,9 +11,9 @@ sub absolute{
         $result[-1] *= -1;
         }
     }
-    @result;
+    return @result;
 }
 
-@list = qw(1 -2 3 -4 5);
+my @list = qw(1 -2 3 -4 5);
 @list = absolute(@list);
 print "@list"."\n";

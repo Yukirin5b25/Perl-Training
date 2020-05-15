@@ -1,11 +1,14 @@
 #!/usr/bin/perl
 
-$system_dir = '/bin';
+use strict;
+use warnings;
 
-opendir $dh, $system_dir or die "Cannot open $system_dir: $!";
-@files = readdir $dh;
-$modified_IN_24h;
-foreach $file (@files){
+my $system_dir = '/bin';
+
+opendir my $dh, $system_dir or die "Cannot open $system_dir: $!";
+my @files = readdir $dh;
+my $modified_IN_24h;
+foreach my $file (@files){
     if(-M $file >1){
         print $file."\n";
     }
@@ -13,6 +16,6 @@ foreach $file (@files){
         $modified_IN_24h += 1;
     }
 }
-print "Count of files & folders modified in one day: ".$files_modified_IN_24h."\n";
+print "Count of files & folders modified in one day: ".$modified_IN_24h."\n";
 #Vm is reinstalled totay..
 

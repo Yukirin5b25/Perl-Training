@@ -1,7 +1,10 @@
 #!/usr/bin/perl
 
-$a = "114";
-$b = "514";
+use strict;
+use warnings;
+
+my $a = "114";
+my $b = "514";
 
 #$temp = $b;
 #$b = $a;

@@ -1,10 +1,13 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
+
 sub increment{
     $_[0] += 1;
 } 
 
-$x = 233;
+my $x = 233;
 
 increment($x);
 increment($x);

@@ -1,9 +1,12 @@
 #!/usr/bin/perl
 
-@arrayA = qw(Fill two arrays with several words.);
-@arrayB = qw(Some elements within the two arrays should be the same, some different.);
+use strict;
+use warnings;
 
-@repeats;
+my @arrayA = qw(Fill two arrays with several words.);
+my @arrayB = qw(Some elements within the two arrays should be the same some different.);
+
+my @repeats;
 
 foreach(@arrayA){
     if(($_ ~~ @arrayB) && !($_ ~~ @repeats)){

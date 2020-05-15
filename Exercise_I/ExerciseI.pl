@@ -1,5 +1,8 @@
 #!usr/bin/perl
 
+use strict;
+use warnings;
+
 #Exercise 1.1 
 #Check test.pl instead
 
@@ -11,6 +14,7 @@ print "Hello WORLD\\PLANET!\nHello \"Universe\"\n";
 #Exercise 1.3
 print "======================================================\n1.3:\n";
 
+my $output;
 $output = ("ha" x 3).(" "."ho" x 3).(" "."ha" x 3);
 print $output."\n";
 
@@ -26,6 +30,8 @@ print "Div: ".(5/4)."\n";
 print "======================================================\n1.5:\n";
 
 print "num1: \n";
+my $num1;
+my $num2;
 chomp($num1 = <STDIN>);
 print "num2: \n";
 chomp($num2 = <STDIN>);
@@ -35,6 +41,8 @@ print $num1." + ".$num2." = ".($num1 + $num2)."\n";
 print "======================================================\n1.6:\n";
 
 print "string1: \n";
+my $string1;
+my $string2;
 chomp($string1 = <STDIN>);
 print "string2: \n";
 chomp($string1 = <STDIN>);
@@ -50,8 +58,9 @@ print "\n";
 print "======================================================\n1.7:\n";
 
 print "input: \n";
+my $input;
 chomp($input = <STDIN>);
-for($i=1;$i<=$input;$i++){
+for(my $i=1;$i<=$input;$i++){
     print "$i ";
 }
 
@@ -60,7 +69,7 @@ print "======================================================\n1.8:\n";
 
 print "input: \n";
 chomp($input = <STDIN>);
-for($i=1;$i<=$input;$i++){
+for(my $i=1;$i<=$input;$i++){
     print "$i ";
     $i%2 == 0 ? print "even" : print "odd";
     print "\t";
