@@ -1,0 +1,79 @@
+% layout 'default';
+% title 'Creat VM';
+
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Available Storages</span>
+      </h4>
+      <ul class="list-group mb-3">
+        % foreach my $ar_storage (@$a_VM_show_storages) {
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0"><%= @$ar_storage[0]%>: <%= @$ar_storage[1]%></h6>
+                    <small class="text-muted"><%= @$ar_storage[3]%></small>
+                </div>
+                <span class="text-muted"><%= @$ar_storage[2]%> GB</span>
+            </li>
+        % }
+      </ul>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">New Virtual machine</h4>
+      <form class="needs-validation was-validated" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">Machine Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              Valid machine name is required.
+            </div>
+          </div>        
+        </div>              
+
+        <div class="mb-3">
+          <label for="md5">Md5 CheckSum</label>
+          <input type="text" class="form-control" id="md5" name="md5" placeholder="" required="">
+          <div class="invalid-feedback">
+            Please enter the machine's md5 checksum.
+          </div>
+        </div>       
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="storage">Storage</label>
+            <select class="custom-select d-block w-100" id="storage" name="storage" required="">
+              <option value="">Choose...</option>
+              % foreach my $ar_storage (@$a_VM_show_storages) {
+                  <option><%=@$ar_storage[0]%></option> 
+              % }
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid storage ID.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="os">Operate System</label>
+            <select class="custom-select d-block w-100" id="os" name="os" required="">
+              <option value="">Choose...</option>
+              <option>Windows</option>
+              <option>Linux</option>
+              <option>Mac OS</option>
+            </select>
+            <div class="invalid-feedback">
+              Please provide a valid os type.
+            </div>
+          </div>
+        </div>
+        <a>Machine ID will be assigned automatically. <a>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to create</button>
+      </form>
+    </div>
+  </div>
+</div>
+

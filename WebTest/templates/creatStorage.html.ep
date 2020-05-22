@@ -1,0 +1,35 @@
+% layout 'default';
+% title 'Creat Storage';
+
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">New Storage</h4>
+      <form class="needs-validation was-validated" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">Storage Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              Valid storage name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="capcity">Capcity</label>
+            <input type="text" class="form-control" id="capcity" name="capcity" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              Valid capcity is required.
+            </div>
+          </div>
+        </div>
+        <a>Machine ID will be assigned automatically. <a>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to create</button>
+      </form>
+    </div>
+  </div>
+</div>
+
