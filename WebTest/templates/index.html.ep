@@ -21,12 +21,12 @@
 
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="creatVM">
+            <a class="nav-link active" href="creatvm">
               Creat VM 
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="creatStorage">              
+            <a class="nav-link" href="creatstorage">              
               Creat Storage
             </a>
           </li>          
@@ -55,7 +55,13 @@
                 <tbody id="vm_table">
                     % foreach my $ar_vm (@$a_vms) {
                       <tr>
+                        % my $b_flag = 1;
                         % foreach my $s_text (@$ar_vm) {
+                          % if($b_flag){
+                              <td><a href= <%="vm?id=".$s_text %>><%= $s_text %></a></td>
+                              % $b_flag = 0;
+                              % next;
+                          % }
                           <td><%= $s_text %></td>
                         % }
                       </tr>
@@ -78,8 +84,14 @@
                 <tbody id="storage_table">
                     % foreach my $ar_storage (@$a_storages) {
                       <tr>
+                        % my $b_flag = 1;
                         % foreach my $s_text (@$ar_storage) {
-                        <td><%= $s_text %></td>
+                          % if($b_flag){
+                              <td><a href= <%="storage?id=".$s_text %>><%= $s_text %></a></td>
+                              % $b_flag = 0;
+                              % next;
+                          % }
+                          <td><%= $s_text %></td>
                         % }
                       </tr>
                     % }

@@ -45,8 +45,8 @@ my $string1;
 my $string2;
 chomp($string1 = <STDIN>);
 print "string2: \n";
-chomp($string1 = <STDIN>);
-if($string1 == $string2){
+chomp($string2 = <STDIN>);
+if($string1 eq $string2){
     print "same\n";
 }
 else{

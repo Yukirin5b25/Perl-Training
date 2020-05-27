@@ -10,7 +10,7 @@ $array[1] = "b";
 $array[2] = "c";
 my $i = 0;
 while($i <= $#array){
-    print $array[$i]."\t";
+    print $array[$i]."\n";
     $i += 1;
 }
 print "\n";

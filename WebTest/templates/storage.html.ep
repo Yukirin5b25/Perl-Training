@@ -1,0 +1,45 @@
+% layout 'default';
+% title 'Storage';
+
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <div class="row">
+        <div class="col-12 alert alert-danger alert-dismissable " <%= $reminder %>>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            Error！Release the storage before delete.
+        </div>
+      </div>
+      <div class="row">
+        <h4 class="col-10 mb-3">Storage</h4>
+        <a class="col-2" href=<%="deletestorage?id=".@$ar_out_put_array[0] %>>Delete</a>
+      </div>
+      <form class="needs-validation was-validated" novalidate="">
+        <input hidden type="text" class="form-control" id="id" name="id" placeholder="" required="" value = <%= @$ar_out_put_array[0] %>>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">Storage Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" required="" value = <%= @$ar_out_put_array[1] %>>
+            <div class="invalid-feedback">
+              Valid storage name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="capcity">Capcity</label>
+            <input type="text" class="form-control" id="capcity" name="capcity" placeholder="" required="" value = <%= @$ar_out_put_array[2] %>>
+            <div class="invalid-feedback">
+              Valid capcity is required.
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to update</button>
+      </form>
+    </div>
+  </div>
+</div>
